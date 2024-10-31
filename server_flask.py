@@ -24,7 +24,7 @@ def upload_file():
         return jsonify({'error': 'No selected file'})
 
     if file and allowed_file(file.filename):
-        # Используйте оригинальное имя файла
+        
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return jsonify({'filename': filename})
